@@ -12,8 +12,4 @@ struct Sense: Decodable {
     let definitions: [String]?
     let shortDefinitions: [String]?
     let examples: [SenseExample]?
-    
-    enum CodingKeys: String, CodingKey {
-        case definitions, examples, shortDefinitions = "short_definitions"
-    }
 }

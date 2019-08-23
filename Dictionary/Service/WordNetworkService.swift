@@ -12,7 +12,7 @@ import Foundation
 class WordNetworkService: NetworkService {
     var wordTitle: String?
     private var infoURL: String {
-        return "https://od-api.oxforddictionaries.com:443/api/v1/entries/en/\(wordTitle?.replacingOccurrences(of: " ", with: "%20") ?? "")"
+        return "https://od-api.oxforddictionaries.com/api/v2/entries/en-gb/\(wordTitle?.replacingOccurrences(of: " ", with: "%20") ?? "")"
     }
     private let headers = [ "Accept": "application/json",
                             "app_id": "7300d1cf",

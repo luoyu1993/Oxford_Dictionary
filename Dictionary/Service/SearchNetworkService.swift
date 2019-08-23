@@ -14,17 +14,17 @@ class SearchNetworkService: NetworkService {
     private let limit = 20
     private var searchURL: String {
         let editedWord = word?.replacingOccurrences(of: " ", with: "%20") ?? ""
-        return "https://od-api.oxforddictionaries.com:443/api/v1/search/en?q=\(editedWord)&prefix=true&limit=\(limit)"
+        return "https://od-api.oxforddictionaries.com/api/v2/search/en-gb?q=\(editedWord)&prefix=true&limit=\(limit)"
     }
     private let headers = [ "Accept": "application/json",
                             "app_id": "7300d1cf",
                             "app_key": "4e6507133f3d787e24c57a7619960241"]
     
-    func getData(_ completionHandler: @escaping ([Word]?) -> Void) {
+    func getData(_ completionHandler: @escaping ([SearchWord]?) -> Void) {
         request(searchURL, headers: headers).responseData {
             switch $0.result {
             case let .success(data):
-                let words = try? JSONDecoder().decode(WordResponse.self, from: data)
+                let words = try? JSONDecoder().decode(SearchWordResponse.self, from: data)
                 DispatchQueue.main.async {
                     completionHandler(words?.results)
                 }

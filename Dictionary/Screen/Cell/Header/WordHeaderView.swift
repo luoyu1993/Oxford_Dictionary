@@ -16,7 +16,7 @@ class WordHeaderView: UITableViewHeaderFooterView {
     var entry: LexicalEntry? {
         didSet {
             wordTitleLabel.text = entry?.text
-            wordTypeLabel.text = entry?.lexicalCategory
+            wordTypeLabel.text = entry?.lexicalCategory.text
             guard let spelling = entry?.pronunciations?.first?.phoneticSpelling else {
                 phoneticSpellingLabel.text = ""
                 return
