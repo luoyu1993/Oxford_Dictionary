@@ -12,7 +12,7 @@ import UIKit
 
 class WordSearchViewController: UIViewController {
     @IBOutlet private var wordsTableView: UITableView!
-    private var words = [Word]()
+    private var words = [SearchWord]()
     private let searchService = SearchNetworkService()
     private let searchController = UISearchController(searchResultsController: nil)
     private let noWordsMessage = "No word found"
@@ -58,8 +58,8 @@ class WordSearchViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let index = self.wordsTableView.indexPathForSelectedRow else { return }
         guard let infoViewController = segue.destination as? InfoWordViewController else { return }
-        infoViewController.wordTitle = words[index.row].title
-        wordService.addNewWord(SearchedWord(wortTitle: words[index.row].title))
+        infoViewController.wordTitle = words[index.row].word
+        wordService.addNewWord(SearchedWord(wortTitle: words[index.row].word))
         searchController.searchBar.resignFirstResponder()
     }
     
@@ -77,7 +77,7 @@ extension WordSearchViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifierCell, for: indexPath)
-        cell.textLabel?.text = isNoWord ? noWordsMessage : words[indexPath.row].title
+        cell.textLabel?.text = isNoWord ? noWordsMessage : words[indexPath.row].word
         return cell
     }
 }

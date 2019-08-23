@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4C0C0E6222434B7600F35EAD /* WordNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C0E6122434B7500F35EAD /* WordNetworkService.swift */; };
+		4C0D180B231080150068B447 /* SearchWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0D180A231080150068B447 /* SearchWord.swift */; };
+		4C0D180D231080EF0068B447 /* SearchWordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0D180C231080EF0068B447 /* SearchWordResponse.swift */; };
+		4C0D181323108B6B0068B447 /* LexicalCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0D181223108B6B0068B447 /* LexicalCategory.swift */; };
 		4C14885A224CB72C00357915 /* NetworkReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C148859224CB72C00357915 /* NetworkReachabilityService.swift */; };
 		4C14885F224D0EF300357915 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C14885E224D0EF300357915 /* Default-568h@2x.png */; };
 		4C3F97FC224443FA00AEF9EA /* WordHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F97FA224443FA00AEF9EA /* WordHeaderView.swift */; };
@@ -39,6 +42,9 @@
 
 /* Begin PBXFileReference section */
 		4C0C0E6122434B7500F35EAD /* WordNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordNetworkService.swift; sourceTree = "<group>"; };
+		4C0D180A231080150068B447 /* SearchWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWord.swift; sourceTree = "<group>"; };
+		4C0D180C231080EF0068B447 /* SearchWordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordResponse.swift; sourceTree = "<group>"; };
+		4C0D181223108B6B0068B447 /* LexicalCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexicalCategory.swift; sourceTree = "<group>"; };
 		4C148859224CB72C00357915 /* NetworkReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityService.swift; sourceTree = "<group>"; };
 		4C14885E224D0EF300357915 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4C3F97FA224443FA00AEF9EA /* WordHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordHeaderView.swift; sourceTree = "<group>"; };
@@ -84,6 +90,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C0D180E231081110068B447 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				4C0D180C231080EF0068B447 /* SearchWordResponse.swift */,
+				4C0D180A231080150068B447 /* SearchWord.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		4C0D180F231081270068B447 /* Word */ = {
+			isa = PBXGroup;
+			children = (
+				4C5D650D22481F46003AD605 /* LexicalEntry.swift */,
+				4C0D181223108B6B0068B447 /* LexicalCategory.swift */,
+				4C5D651522482016003AD605 /* Pronunciation.swift */,
+				4C5D650F22481F82003AD605 /* Entry.swift */,
+				4C5D651122481F9B003AD605 /* Sense.swift */,
+				4C5D651322481FB0003AD605 /* SenseExample.swift */,
+				4C8842172242EDC500110971 /* Word.swift */,
+				4CC4F9082242151000E494DC /* WordResponse.swift */,
+			);
+			path = Word;
+			sourceTree = "<group>";
+		};
 		4C14885C224D0E4200357915 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,13 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				4C960A9622496FB300B068EB /* Realm Model */,
-				4C8842172242EDC500110971 /* Word.swift */,
-				4C5D650D22481F46003AD605 /* LexicalEntry.swift */,
-				4C5D651522482016003AD605 /* Pronunciation.swift */,
-				4C5D650F22481F82003AD605 /* Entry.swift */,
-				4C5D651122481F9B003AD605 /* Sense.swift */,
-				4C5D651322481FB0003AD605 /* SenseExample.swift */,
-				4CC4F9082242151000E494DC /* WordResponse.swift */,
+				4C0D180E231081110068B447 /* Search */,
+				4C0D180F231081270068B447 /* Word */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -320,22 +345,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dictionary/Pods-Dictionary-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Dictionary/Pods-Dictionary-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Dictionary/Pods-Dictionary-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -373,6 +387,7 @@
 				4C5D651422481FB0003AD605 /* SenseExample.swift in Sources */,
 				4CD778A92245A18100C8E7EC /* InfoTableViewCell.swift in Sources */,
 				4C960A982249702E00B068EB /* WordDBService.swift in Sources */,
+				4C0D181323108B6B0068B447 /* LexicalCategory.swift in Sources */,
 				4CC4F9092242151000E494DC /* WordResponse.swift in Sources */,
 				4C14885A224CB72C00357915 /* NetworkReachabilityService.swift in Sources */,
 				4CD5041C224D76650012036A /* FavouritesViewController.swift in Sources */,
@@ -381,6 +396,8 @@
 				4C0C0E6222434B7600F35EAD /* WordNetworkService.swift in Sources */,
 				4C5D651222481F9B003AD605 /* Sense.swift in Sources */,
 				4CC4F9042242149900E494DC /* NetworkService.swift in Sources */,
+				4C0D180B231080150068B447 /* SearchWord.swift in Sources */,
+				4C0D180D231080EF0068B447 /* SearchWordResponse.swift in Sources */,
 				4CC4F907224214C400E494DC /* SearchNetworkService.swift in Sources */,
 				4CD5041E224D770A0012036A /* FavouriteWord.swift in Sources */,
 				4C88421B2242F00D00110971 /* InfoWordViewController.swift in Sources */,

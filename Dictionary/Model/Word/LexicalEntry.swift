@@ -10,6 +10,7 @@ import Foundation
 
 struct LexicalEntry: Decodable {
     let entries: [Entry]?
-    let lexicalCategory, text: String
+    let lexicalCategory: LexicalCategory
+    let text: String
     let pronunciations: [Pronunciation]?
 }
